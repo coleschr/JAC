@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 
 public class FragmentHome extends Fragment implements View.OnClickListener {
-    private ImageButton add, camera;
+    private ImageButton add;
     private Fragment currentFragment;
 
     @Nullable
@@ -33,21 +33,15 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 
     private void wireWidgets(View rootView) {
         add = rootView.findViewById(R.id.button_add);
-        camera = rootView.findViewById(R.id.button_camera);
     }
 
     private void setOnClickListeners() {
         add.setOnClickListener(this);
-        camera.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button_camera:
-                currentFragment = new FragmentCamera();
-                switchToNewScreen();
-                break;
             case R.id.button_add:
                 currentFragment = new FragmentEdit();
                 switchToNewScreen();

@@ -41,6 +41,7 @@ public class FragmentEdit extends Fragment implements View.OnClickListener {
             startActivityForResult(photoPickerIntent, SELECT_PHOTO);
         }
 
+
         ((MainActivity)this.getActivity()).screen = 2;
 
         //return the view that we inflated
@@ -95,4 +96,6 @@ public class FragmentEdit extends Fragment implements View.OnClickListener {
                 }
         }
     }
+
+
 }
