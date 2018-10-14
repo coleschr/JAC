@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    private int screen;
     private Fragment currentFragment;
     private ConstraintLayout layout;
 
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpHomeScreen() {
-        screen = 0;
         currentFragment = new FragmentHome();
         switchToNewScreen();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
