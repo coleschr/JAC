@@ -1,5 +1,6 @@
 package com.example.cole.jac;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 public class FragmentCamera extends Fragment implements View.OnClickListener {
-        private ImageView capture;
+        private ImageView capture, camera;
         private Fragment currentFragment;
 
         @Nullable
@@ -25,6 +26,8 @@ public class FragmentCamera extends Fragment implements View.OnClickListener {
 
             //get any other initial set up done
 
+            //Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+            //startActivity(intent);
 
             //return the view that we inflated
             return rootView;
@@ -32,6 +35,7 @@ public class FragmentCamera extends Fragment implements View.OnClickListener {
 
         private void wireWidgets(View rootView) {
             capture = rootView.findViewById(R.id.imageView_capture);
+            camera = rootView.findViewById(R.id.imageView_camera);
         }
 
         private void setOnClickListeners() {
