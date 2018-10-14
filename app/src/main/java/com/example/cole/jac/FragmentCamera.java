@@ -3,15 +3,20 @@ package com.example.cole.jac;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.hardware.Camera;
+import android.hardware.camera2.CameraManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import java.io.IOException;
 
 public class FragmentCamera extends Fragment implements View.OnClickListener {
     private ImageView capture, camera_image;
@@ -30,19 +35,8 @@ public class FragmentCamera extends Fragment implements View.OnClickListener {
         //get any other initial set up done
         ((MainActivity)this.getActivity()).screen = 1;
 
-        /*CameraManager cameraManager = (CameraManager) getActivity().getSystemService(CAMERA_SERVICE);
-        try {
-            for (String cameraId : cameraManager.getCameraIdList()) {
-                CameraCharacteristics characteristics = cameraManager.getCameraCharacteristics(cameraId);
-                Integer facing = characteristics.get(CameraCharacteristics.LENS_FACING);
-                if (facing != null && facing.equals(CameraCharacteristics.LENS_FACING_FRONT)) {
+        CameraManager cm = (CameraManager) getContext().getSystemService(getContext().CAMERA_SERVICE);
 
-                }
-                // Do something with the characteristics
-            }
-        } catch (CameraAccessException e) {
-            e.printStackTrace();
-        }*/
 
         //return the view that we inflated
         return rootView;
@@ -78,5 +72,7 @@ public class FragmentCamera extends Fragment implements View.OnClickListener {
                     .commit();
         }
     }
+
+
 
 }
