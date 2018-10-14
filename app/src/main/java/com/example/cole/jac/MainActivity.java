@@ -11,6 +11,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
     private Fragment currentFragment;
     private ConstraintLayout layout;
+    public int screen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpHomeScreen() {
+        screen = 0;
         currentFragment = new FragmentHome();
         switchToNewScreen();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
